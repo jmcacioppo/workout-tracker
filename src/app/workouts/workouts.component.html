@@ -1,8 +1,18 @@
 <h2>Your Workouts</h2>
 
-<div *ngFor="let workout of workouts" [routerLink]="[workout.id]">
-  {{ workout.type }}
-  <span *ngIf="workout.distance">({{ workout.distance }} miles)</span> for
-  {{ workout.time }} minutes on
-  {{ workout.date }}
+<div class="row text-center">
+  <div *ngFor="let workout of workouts" class="col-md-4">
+    <div class="card" style="height: 15rem; width: 18rem;">
+      <div class="card-body">
+        <h5>
+          <a [routerLink]="[workout.id]">Workout for {{ workout.date }}</a>
+        </h5>
+        <div class="card-text">
+          {{ workout.type }}
+          <span *ngIf="workout.distance">({{ workout.distance }} miles)</span>
+          for {{ workout.time }} minutes
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,1 +1,7 @@
 <h2>Workout for {{ workout.date }}</h2>
+
+<div>
+  {{ workout.type }}
+  <span *ngIf="workout.distance">({{ workout.distance }} miles)</span> for
+  {{ workout.time }} minutes
+</div>
