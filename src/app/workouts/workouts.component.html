@@ -1,0 +1,8 @@
+<h2>Your Workouts</h2>
+
+<div *ngFor="let workout of workouts" [routerLink]="[workout.id]">
+  {{ workout.type }}
+  <span *ngIf="workout.distance">({{ workout.distance }} miles)</span> for
+  {{ workout.time }} minutes on
+  {{ workout.date }}
+</div>
