@@ -1,7 +1,7 @@
-export interface Workout {
-  id: number;
-  date: string; // MM/DD/YYYY
-  time: number; // mins
-  type: string;
-  distance?: number; // miles
+export class Workout {
+  public id: number;
+  public date: string; // MM/DD/YYYY
+  public time: number = 0; // mins
+  public type: string;
+  public distance?: number = 0; // miles
 }

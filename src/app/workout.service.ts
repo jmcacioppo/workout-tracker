@@ -5,10 +5,14 @@ import { Workout } from './workouts.model';
   providedIn: 'root',
 })
 export class WorkoutService {
-  constructor() {}
+  workouts: Workout[];
 
-  getWorkouts(): Workout[] {
-    return [
+  constructor() {
+    this.initialize();
+  }
+
+  initialize(): void {
+    this.workouts = [
       {
         id: 1,
         type: 'Run',
@@ -30,5 +34,13 @@ export class WorkoutService {
         date: '4/13/2020',
       },
     ];
+  }
+
+  getWorkouts(): Workout[] {
+    return this.workouts;
+  }
+
+  addWorkout(workout: Workout): void {
+    this.workouts.push(workout);
   }
 }
